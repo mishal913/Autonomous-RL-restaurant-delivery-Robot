@@ -1,0 +1,4 @@
+genesis-world[render]
+stable-baselines3
+gymnasium
+numpy

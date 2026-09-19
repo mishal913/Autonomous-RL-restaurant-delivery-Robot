@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: robot-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-validation:
+    name: Source validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile Python source
+        run: |
+          python -m compileall -q robot
+          python -m compileall -q restaurant
+
+      - name: Validate key project files
+        run: |
+          test -f robot/delivery_env_final_dual_delivery_v4_camera.py
+          test -f robot/final_dual_delivery_robot_v7_goal_aware_recovery.py
+          test -f restaurant/restaurant_env_final.py
+          test -f restaurant/run_final_restaurant.py
+          test -f restaurant/predictive_dwa.py
+          test -f restaurant/run_residual_sac_v2.py
+          test -f restaurant/README_RESIDUAL_SAC_V2.md
