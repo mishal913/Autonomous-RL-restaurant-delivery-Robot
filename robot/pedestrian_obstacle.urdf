@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="pedestrian_obstacle">
+  <material name="shirt"><color rgba="0.15 0.45 0.85 1"/></material>
+  <material name="skin"><color rgba="0.90 0.70 0.52 1"/></material>
+  <material name="dark"><color rgba="0.12 0.12 0.12 1"/></material>
+
+  <link name="body">
+    <visual>
+      <origin xyz="0 0 0.82"/>
+      <geometry><box size="0.38 0.28 0.58"/></geometry>
+      <material name="shirt"/>
+    </visual>
+
+    <visual>
+      <origin xyz="-0.12 0 0.30"/>
+      <geometry><cylinder radius="0.075" length="0.60"/></geometry>
+      <material name="dark"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0.12 0 0.30"/>
+      <geometry><cylinder radius="0.075" length="0.60"/></geometry>
+      <material name="dark"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 1.28"/>
+      <geometry><sphere radius="0.18"/></geometry>
+      <material name="skin"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.70"/>
+      <geometry><box size="0.55 0.48 1.40"/></geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.70"/>
+      <mass value="10"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+</robot>

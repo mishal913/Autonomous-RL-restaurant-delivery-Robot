@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="pickup_pad_visual">
+  <material name="yellow"><color rgba="1.0 0.72 0.05 0.95"/></material>
+  <material name="dark"><color rgba="0.12 0.15 0.20 0.70"/></material>
+
+  <link name="root">
+    <visual>
+      <origin xyz="0 0 0.004"/>
+      <geometry><box size="1.05 1.05 0.008"/></geometry>
+      <material name="dark"/>
+    </visual>
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0"
+               iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <link name="top">
+    <visual><origin xyz="0 0.49 0.010"/><geometry><box size="1.05 0.07 0.012"/></geometry><material name="yellow"/></visual>
+  </link>
+  <joint name="top_joint" type="fixed"><parent link="root"/><child link="top"/></joint>
+
+  <link name="bottom">
+    <visual><origin xyz="0 -0.49 0.010"/><geometry><box size="1.05 0.07 0.012"/></geometry><material name="yellow"/></visual>
+  </link>
+  <joint name="bottom_joint" type="fixed"><parent link="root"/><child link="bottom"/></joint>
+
+  <link name="left">
+    <visual><origin xyz="-0.49 0 0.010"/><geometry><box size="0.07 0.98 0.012"/></geometry><material name="yellow"/></visual>
+  </link>
+  <joint name="left_joint" type="fixed"><parent link="root"/><child link="left"/></joint>
+
+  <link name="right">
+    <visual><origin xyz="0.49 0 0.010"/><geometry><box size="0.07 0.98 0.012"/></geometry><material name="yellow"/></visual>
+  </link>
+  <joint name="right_joint" type="fixed"><parent link="root"/><child link="right"/></joint>
+</robot>

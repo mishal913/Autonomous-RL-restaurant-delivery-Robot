@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="parcel_stack_obstacle">
+  <material name="box1"><color rgba="0.63 0.40 0.20 1"/></material>
+  <material name="box2"><color rgba="0.76 0.54 0.30 1"/></material>
+
+  <link name="parcels">
+    <visual>
+      <origin xyz="-0.28 0 0.25"/>
+      <geometry><box size="0.52 0.78 0.50"/></geometry>
+      <material name="box1"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0.28 0 0.25"/>
+      <geometry><box size="0.52 0.78 0.50"/></geometry>
+      <material name="box2"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 0.70"/>
+      <geometry><box size="0.58 0.66 0.40"/></geometry>
+      <material name="box1"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.45"/>
+      <geometry><box size="1.15 0.88 0.90"/></geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.45"/>
+      <mass value="20"/>
+      <inertia ixx="2" ixy="0" ixz="0" iyy="2" iyz="0" izz="2"/>
+    </inertial>
+  </link>
+</robot>

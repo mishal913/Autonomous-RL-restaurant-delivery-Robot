@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="table_number_5">
+  <material name="plate"><color rgba="0.05 0.05 0.06 1"/></material>
+  <material name="digit"><color rgba="1.00 0.78 0.08 1"/></material>
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry><box size="0.36 0.48 0.035"/></geometry>
+      <material name="plate"/>
+    </visual>
+    <visual>
+      <origin xyz="0.000 0.180 0.045"/>
+      <geometry><box size="0.180 0.045 0.025"/></geometry>
+      <material name="digit"/>
+    </visual>
+    <visual>
+      <origin xyz="0.105 -0.090 0.045"/>
+      <geometry><box size="0.045 0.160 0.025"/></geometry>
+      <material name="digit"/>
+    </visual>
+    <visual>
+      <origin xyz="0.000 -0.180 0.045"/>
+      <geometry><box size="0.180 0.045 0.025"/></geometry>
+      <material name="digit"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.105 0.090 0.045"/>
+      <geometry><box size="0.045 0.160 0.025"/></geometry>
+      <material name="digit"/>
+    </visual>
+    <visual>
+      <origin xyz="0.000 0.000 0.045"/>
+      <geometry><box size="0.180 0.045 0.025"/></geometry>
+      <material name="digit"/>
+    </visual>
+  </link>
+</robot>

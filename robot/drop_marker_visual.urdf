@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="drop_marker_visual">
+  <material name="drop_color">
+    <color rgba="0.20 0.85 0.35 1"/>
+  </material>
+
+  <link name="marker">
+    <visual>
+      <origin xyz="0 0 0.006"/>
+      <geometry>
+        <box size="0.82 0.82 0.012"/>
+      </geometry>
+      <material name="drop_color"/>
+    </visual>
+
+    <!-- Intentionally NO collision element -->
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0"
+               iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </link>
+</robot>

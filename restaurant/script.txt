@@ -1,0 +1,2 @@
+"C:\Users\H & S\genesis_env\Scripts\activate.bat"
+python run_final_restaurant.py --human-cooperation 0

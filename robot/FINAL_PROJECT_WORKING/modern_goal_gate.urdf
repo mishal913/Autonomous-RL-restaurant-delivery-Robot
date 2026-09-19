@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot name="modern_goal_gate">
+  <material name="white"><color rgba="0.94 0.95 0.97 1"/></material>
+  <material name="dark"><color rgba="0.12 0.15 0.20 1"/></material>
+  <material name="orange"><color rgba="0.10 0.55 1.0 1"/></material>
+  <material name="green"><color rgba="0.20 0.95 0.48 1"/></material>
+
+  <link name="root">
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0"
+               iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </link>
+
+  <!-- white posts -->
+  <link name="left_post">
+    <visual>
+      <origin xyz="0 -1.18 0.76"/>
+      <geometry><box size="0.22 0.28 1.52"/></geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+  <joint name="left_post_joint" type="fixed">
+    <parent link="root"/><child link="left_post"/>
+  </joint>
+
+  <link name="right_post">
+    <visual>
+      <origin xyz="0 1.18 0.76"/>
+      <geometry><box size="0.22 0.28 1.52"/></geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+  <joint name="right_post_joint" type="fixed">
+    <parent link="root"/><child link="right_post"/>
+  </joint>
+
+  <!-- orange feet -->
+  <link name="left_foot">
+    <visual>
+      <origin xyz="0 -1.18 0.07"/>
+      <geometry><box size="0.42 0.52 0.14"/></geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+  <joint name="left_foot_joint" type="fixed">
+    <parent link="root"/><child link="left_foot"/>
+  </joint>
+
+  <link name="right_foot">
+    <visual>
+      <origin xyz="0 1.18 0.07"/>
+      <geometry><box size="0.42 0.52 0.14"/></geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+  <joint name="right_foot_joint" type="fixed">
+    <parent link="root"/><child link="right_foot"/>
+  </joint>
+
+  <!-- top white arch -->
+  <link name="top_bar">
+    <visual>
+      <origin xyz="0 0 1.58"/>
+      <geometry><box size="0.24 2.62 0.28"/></geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+  <joint name="top_bar_joint" type="fixed">
+    <parent link="root"/><child link="top_bar"/>
+  </joint>
+
+  <!-- dark sign panel -->
+  <link name="sign_panel">
+    <visual>
+      <origin xyz="-0.13 0 1.58"/>
+      <geometry><box size="0.05 1.25 0.18"/></geometry>
+      <material name="dark"/>
+    </visual>
+  </link>
+  <joint name="sign_panel_joint" type="fixed">
+    <parent link="root"/><child link="sign_panel"/>
+  </joint>
+
+  <!-- orange accent bands -->
+  <link name="left_band">
+    <visual>
+      <origin xyz="-0.13 -1.18 0.48"/>
+      <geometry><box size="0.05 0.32 0.12"/></geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+  <joint name="left_band_joint" type="fixed">
+    <parent link="root"/><child link="left_band"/>
+  </joint>
+
+  <link name="right_band">
+    <visual>
+      <origin xyz="-0.13 1.18 0.48"/>
+      <geometry><box size="0.05 0.32 0.12"/></geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+  <joint name="right_band_joint" type="fixed">
+    <parent link="root"/><child link="right_band"/>
+  </joint>
+
+  <!-- start badge -->
+  <link name="badge">
+    <visual>
+      <origin xyz="0 0 1.86" rpy="0 1.5708 0"/>
+      <geometry><cylinder radius="0.24" length="0.08"/></geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+  <joint name="badge_joint" type="fixed">
+    <parent link="root"/><child link="badge"/>
+  </joint>
+
+  <link name="badge_cube">
+    <visual>
+      <origin xyz="-0.07 0 1.86"/>
+      <geometry><box size="0.08 0.16 0.16"/></geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+  <joint name="badge_cube_joint" type="fixed">
+    <parent link="root"/><child link="badge_cube"/>
+  </joint>
+</robot>

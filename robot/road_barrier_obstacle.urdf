@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot name="road_barrier_obstacle">
+  <material name="barrier"><color rgba="0.95 0.55 0.10 1"/></material>
+  <material name="white"><color rgba="0.95 0.95 0.95 1"/></material>
+
+  <link name="barrier">
+    <visual>
+      <origin xyz="0 -0.52 0.38"/>
+      <geometry><cylinder radius="0.10" length="0.76"/></geometry>
+      <material name="barrier"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0.52 0.38"/>
+      <geometry><cylinder radius="0.10" length="0.76"/></geometry>
+      <material name="barrier"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 0.65"/>
+      <geometry><box size="0.18 1.35 0.34"/></geometry>
+      <material name="white"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 0.65"/>
+      <geometry><box size="0.20 0.44 0.36"/></geometry>
+      <material name="barrier"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.46"/>
+      <geometry><box size="0.38 1.48 0.92"/></geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.46"/>
+      <mass value="15"/>
+      <inertia ixx="2" ixy="0" ixz="0" iyy="2" iyz="0" izz="2"/>
+    </inertial>
+  </link>
+</robot>

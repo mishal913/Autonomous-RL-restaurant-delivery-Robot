@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="start_pad_visual">
+  <material name="green"><color rgba="0.18 0.95 0.45 0.95"/></material>
+  <link name="pad">
+    <visual>
+      <origin xyz="0 0 0.006"/>
+      <geometry><box size="0.95 0.78 0.012"/></geometry>
+      <material name="green"/>
+    </visual>
+    <inertial>
+      <mass value="0.001"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0"
+               iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+  </link>
+</robot>

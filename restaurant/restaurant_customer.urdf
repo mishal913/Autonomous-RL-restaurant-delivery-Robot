@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot name="restaurant_customer">
+  <material name="skin"><color rgba="0.76 0.52 0.36 1"/></material>
+  <material name="shirt"><color rgba="0.12 0.42 0.72 1"/></material>
+  <material name="trousers"><color rgba="0.10 0.12 0.18 1"/></material>
+  <material name="hair"><color rgba="0.07 0.05 0.04 1"/></material>
+  <material name="shoe"><color rgba="0.04 0.04 0.05 1"/></material>
+
+  <link name="base_link">
+    <!-- Torso -->
+    <visual>
+      <origin xyz="0 0 1.08"/>
+      <geometry><box size="0.34 0.25 0.52"/></geometry>
+      <material name="shirt"/>
+    </visual>
+    <!-- Head and hair -->
+    <visual>
+      <origin xyz="0 0 1.52"/>
+      <geometry><sphere radius="0.14"/></geometry>
+      <material name="skin"/>
+    </visual>
+    <visual>
+      <origin xyz="-0.015 0 1.60"/>
+      <geometry><sphere radius="0.12"/></geometry>
+      <material name="hair"/>
+    </visual>
+    <!-- Small nose marks the forward (+X) direction -->
+    <visual>
+      <origin xyz="0.135 0 1.52"/>
+      <geometry><sphere radius="0.025"/></geometry>
+      <material name="skin"/>
+    </visual>
+    <!-- Arms -->
+    <visual>
+      <origin xyz="0 0.22 1.06"/>
+      <geometry><cylinder radius="0.055" length="0.50"/></geometry>
+      <material name="shirt"/>
+    </visual>
+    <visual>
+      <origin xyz="0 -0.22 1.06"/>
+      <geometry><cylinder radius="0.055" length="0.50"/></geometry>
+      <material name="shirt"/>
+    </visual>
+    <!-- Legs -->
+    <visual>
+      <origin xyz="0 0.095 0.48"/>
+      <geometry><cylinder radius="0.070" length="0.72"/></geometry>
+      <material name="trousers"/>
+    </visual>
+    <visual>
+      <origin xyz="0 -0.095 0.48"/>
+      <geometry><cylinder radius="0.070" length="0.72"/></geometry>
+      <material name="trousers"/>
+    </visual>
+    <!-- Shoes -->
+    <visual>
+      <origin xyz="0.055 0.095 0.09"/>
+      <geometry><box size="0.23 0.13 0.10"/></geometry>
+      <material name="shoe"/>
+    </visual>
+    <visual>
+      <origin xyz="0.055 -0.095 0.09"/>
+      <geometry><box size="0.23 0.13 0.10"/></geometry>
+      <material name="shoe"/>
+    </visual>
+
+    <!-- One reliable navigation/physics footprint. -->
+    <collision>
+      <origin xyz="0 0 0.84"/>
+      <geometry><cylinder radius="0.25" length="1.68"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.84"/>
+      <mass value="68"/>
+      <inertia ixx="16" ixy="0" ixz="0" iyy="16" iyz="0" izz="3"/>
+    </inertial>
+  </link>
+</robot>

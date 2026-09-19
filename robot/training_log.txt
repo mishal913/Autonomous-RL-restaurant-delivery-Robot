@@ -1,0 +1,4 @@
+"C:\Users\H & S\genesis_env\Scripts\activate.bat"
+cd C:\robot
+python final_dual_delivery_robot_v6_clean_exit.py
+python final_dual_delivery_robot_v7_goal_aware_recovery.py
